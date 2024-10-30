@@ -1,10 +1,12 @@
 # app.py
 import streamlit as st
-pip install streamlit-option-menu
-streamlit run app.py
 
-
-from streamlit_option_menu import option_menu
+# Intentar importar la librería y agregar instrucción de instalación si no está instalada
+try:
+    from streamlit_option_menu import option_menu
+except ModuleNotFoundError:
+    st.error("La librería 'streamlit-option-menu' no está instalada. Ejecútalo en la terminal con el comando: `pip install streamlit-option-menu`")
+    st.stop()
 
 # Configuración de página
 st.set_page_config(page_title="Aplicación Divertida", page_icon="🎉")
