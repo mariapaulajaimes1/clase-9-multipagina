@@ -1,25 +1,17 @@
-# app.py
+# pages/introduccion.py
 import streamlit as st
 
-# Intentar importar la librería y agregar instrucción de instalación si no está instalada
-try:
-    from streamlit_option_menu import option_menu
-except ModuleNotFoundError:
-    st.error("La librería 'streamlit-option-menu' no está instalada. Ejecútalo en la terminal con el comando: `pip install streamlit-option-menu`")
-    st.stop()
+st.title("📚 Introducción")
+st.markdown("Bienvenido a la **Introducción** de nuestra aventura. Aquí descubrirás lo que te espera en este viaje.")
+st.write("Pero espera... ¡hay algo de magia en el aire!")
 
-# Configuración de página
-st.set_page_config(page_title="Aplicación Divertida", page_icon="🎉")
+# Botones interactivos
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Quiero saber más 🤓"):
+        st.info("Este proyecto está diseñado para hacerte sonreír, aprender algo nuevo y, quién sabe, ¡quizás dejarte un poco inspirado!")
 
-# Menú de navegación en la barra lateral
-with st.sidebar:
-    seleccion = option_menu("Menú de Navegación", ["Inicio", "Introducción"],
-                            icons=['house', 'info-circle'],
-                            menu_icon="cast", default_index=0)
-
-# Lógica de navegación
-if seleccion == "Inicio":
-    import pages.inicio
-
-elif seleccion == "Introducción":
-    import pages.introduccion
+with col2:
+    if st.button("Muéstrame algo genial 🎩"):
+        st.markdown("![Wow](https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif)")
+        st.write("¿Genial, verdad? ¡Sigamos explorando! 🔍")
