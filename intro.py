@@ -1,19 +1,13 @@
-# app.py
+# pages/inicio.py
 import streamlit as st
-from streamlit_option_menu import option_menu
 
-# Configuración de página
-st.set_page_config(page_title="Aplicación Divertida", page_icon="🎉")
+st.title("🎉 Bienvenidos a la Aventura Interactiva 🎉")
+st.write("¿Estás listo para embarcarte en una experiencia inolvidable? ¡Sujeta tu cinturón y disfruta del viaje!")
 
-# Menú de navegación en la barra lateral
-with st.sidebar:
-    seleccion = option_menu("Menú de Navegación", ["Inicio", "Introducción"],
-                            icons=['house', 'info-circle'],
-                            menu_icon="cast", default_index=0)
+st.markdown("## Vamos a Empezar 🚀")
+st.write("Para continuar, pulsa el botón mágico aquí abajo 👇")
 
-# Lógica de navegación
-if seleccion == "Inicio":
-    import pages.inicio
-
-elif seleccion == "Introducción":
-    import pages.introduccion
+# Botón de inicio con interacción
+if st.button("Presiona Aquí para una Sorpresa 🎁"):
+    st.balloons()
+    st.success("¡Eso fue divertido! Ahora, veamos qué tenemos en la **Introducción**.")
