@@ -1,5 +1,9 @@
 # app.py
 import streamlit as st
+pip install streamlit-option-menu
+streamlit run app.py
+
+
 from streamlit_option_menu import option_menu
 
 # Configuración de página
